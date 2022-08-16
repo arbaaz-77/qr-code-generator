@@ -47,16 +47,17 @@
     </style>
     <title>QR code generator | Arbaaz</title>
   </head>
-  <body>
-    <header class="p-4 mb-10 bg-red-500">
-      <div class="max-w-5xl m-auto">
-        <div class="text-xl font-bold text-white">QR Code Generator</div>
+  <body class="bg-[url('images/shattered-island.gif')]">
+    <header class="p-4 mb-10 bg-gray-500">
+      <div class="max-w-5xl m-auto flex justify-between items-center">
+        <div class="text-2xl font-bold text-white">QR Code Generator</div>
+        <div class="text-sm font-bold text-white">&copy; Arbaaz Sumar</div>
       </div>
     </header>
 
     <main>
       <div
-        class="flex flex-col-reverse align-center justify-center m-auto md:max-w-4xl p-10 md:flex-row"
+        class="flex flex-col-reverse align-center justify-center m-auto md:max-w-4xl p-10 md:flex-row backdrop-blur-md text-white"
       >
         <div class="w-full md:w-2/3 mr-24">
           <h1 class="text-3xl font-bold mb-5 md:text-4xl">QR Code Generator</h1>
@@ -65,7 +66,8 @@
             quickly.
           </p>
           <p>
-            Enter your URL below to generate a QR Code and download the image.
+            Enter your URL and preferred size below to generate a QR Code and
+            download the image.
           </p>
 
           <form id="generate-form" class="mt-4">
@@ -73,11 +75,12 @@
               id="url"
               type="url"
               placeholder="Enter a URL"
-              class="w-full border-2 border-gray-200 rounded p-3 text-grey-dark mr-2 focus:outline-none mb-5"
+              class="w-full border-2 border-gray-200 rounded p-3 text-grey-dark mr-2 focus:outline-none mb-5 text-black"
+              required
             />
 
             <select
-              class="w-full border-2 border-gray-200 rounded p-3 text-grey-dark mr-2 focus:outline-none"
+              class="w-full border-2 border-gray-200 rounded p-3 text-grey-dark mr-2 focus:outline-none text-black"
               name="size"
               id="size"
             >
@@ -97,9 +100,9 @@
             </button>
           </form>
         </div>
-        <div class="w-full md:w-1/3 self-center">
+        <div class="hidden md:block md:w-1/3 self-center">
           <img
-            class="w-1/2 m-auto mb-10 md:w-full"
+            class="m-auto mb-10 w-full rounded-lg"
             src="images/qr-code.jpg"
             alt=""
           />
@@ -111,7 +114,11 @@
         class="max-w-5xl m-auto flex flex-col text-center align-center justify-center mt-20"
       >
         <!-- Spinner -->
-        <div id="spinner" role="status">
+        <div
+          id="spinner"
+          role="status"
+          class="max-w-5xl m-auto flex flex-col text-center align-center justify-center mt-20"
+        >
           <img src="images/spinner.svg" alt="" />
         </div>
 
