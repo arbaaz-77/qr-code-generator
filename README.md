@@ -2,4 +2,4 @@
 
 https://arbaaz-77.github.io/qr-code-generator/
 
-~[screesnhot](qr.png)
+~[screesnhot](./qr.png)
